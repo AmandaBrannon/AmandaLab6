@@ -8,6 +8,22 @@ def encode(password):
     return encoded
 
 
+def decode(encodedPassword):
+    result = ""
+    for i in encodedPassword:
+        i = int(i)
+        if i >= 3:
+            i -= 3
+            result += str(i)
+        else:
+            if i == 2:
+                result += '9'
+            elif i == 1:
+                result += '8'
+            elif i == 0:
+                    result += '7'
+        return result
+
 
 
 def main():
